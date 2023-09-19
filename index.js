@@ -7,7 +7,7 @@ var meanScore = 0;
 var bestScore = 0;
 var grid = [];
 var gridGenerated = false;
-
+var day = 1;
 app.use(bodyParser.json());
 
 //if ((gridGenerated = false)) {
@@ -72,6 +72,7 @@ schedule.scheduleJob("0 0 * * *", () => {
       timestamp: "2023-09-17T15:56:19.334Z",
     },
   ];
+  day = day + 1;
 });
 
 const callback = () => {
@@ -96,6 +97,12 @@ app.get("/api/bestScore", (req, res) => {
   // Find the highest score
 
   res.json({ bestScore });
+});
+
+app.get("/api/bestScore", (req, res) => {
+  // Find the highest score
+
+  res.json({ day });
 });
 app.get("/api/meanScore", (req, res) => {
   // Find the highest score
