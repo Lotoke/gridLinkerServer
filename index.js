@@ -99,7 +99,7 @@ app.get("/api/bestScore", (req, res) => {
   res.json({ bestScore });
 });
 
-app.get("/api/bestScore", (req, res) => {
+app.get("/api/day", (req, res) => {
   // Find the highest score
 
   res.json({ day });
